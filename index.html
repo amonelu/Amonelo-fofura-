@@ -1,1 +1,146 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amonelu Stickers ✨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra de Navegação Superior -->
+    <nav class="navbar">
+        <div class="nav-logo">💝 Amonelu Stickers 💝</div>
+        <div class="nav-links">
+            <a href="#">Início</a>
+            <a href="#">Catálogo</a>
+            <a href="#">Favoritos</a>
+            <a href="#" class="cart-nav" onclick="abrirPixModal('Geral', 0)">Carrinho <span id="cart-count">0</span></a>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho Principal Estilo Aesthetic -->
+    <header class="main-header">
+        <div class="header-content">
+            <h1>AMONELU STICKERS</h1>
+            <p class="tagline">Stickers animados personalizados para WhatsApp e Instagram ✨</p>
+            <div class="badges">
+                <span>🪷 Alta qualidade</span>
+                <span>⚡ Entrega rápida</span>
+                <span>💖 Feito com amor</span>
+            </div>
+            <div class="stamp">100% PERSONALIZADO 💕</div>
+        </div>
+    </header>
+
+    <!-- Seção de Filtros / Categorias -->
+    <div class="categorias-container">
+        <button class="cat-btn ativo">✨ Todos</button>
+        <button class="cat-btn">💜 BTS</button>
+        <button class="cat-btn">😂 Engraçados</button>
+        <button class="cat-btn">🐶 Cachorros</button>
+        <button class="cat-btn">🎀 Personalizados</button>
+        <button class="cat-btn">🎵 Música</button>
+    </div>
+
+    <!-- Título da Vitrine -->
+    <h2 class="section-title">💖 Escolha seus stickers 💖</h2>
+
+    <!-- Grid de Stickers da Vitrine -->
+    <main class="vitrine-grid">
+        
+        <!-- Sticker 1 -->
+        <div class="sticker-card">
+            <span class="heart-icon">❤️</span>
+            <div class="sticker-img">🐶</div>
+            <h3>Acorda, Preguiça!</h3>
+            <p class="preco">R$ 2,00</p>
+            <button class="btn-comprar" onclick="abrirPixModal('Sticker Acorda, Preguiça!', 2.00)">Comprar 🛒</button>
+        </div>
+
+        <!-- Sticker 2 -->
+        <div class="sticker-card">
+            <span class="heart-icon">❤️</span>
+            <div class="sticker-img">🐼</div>
+            <h3>Hora do Bubble Tea</h3>
+            <p class="preco">R$ 2,00</p>
+            <button class="btn-comprar" onclick="abrirPixModal('Sticker Hora do Bubble Tea', 2.00)">Comprar 🛒</button>
+        </div>
+
+        <!-- Sticker 3 -->
+        <div class="sticker-card">
+            <span class="heart-icon">❤️</span>
+            <div class="sticker-img">✨</div>
+            <h3>Feliz e Confiante</h3>
+            <p class="preco">R$ 2,00</p>
+            <button class="btn-comprar" onclick="abrirPixModal('Sticker Feliz e Confiante', 2.00)">Comprar 🛒</button>
+        </div>
+
+        <!-- Sticker 4 -->
+        <div class="sticker-card">
+            <span class="heart-icon">❤️</span>
+            <div class="sticker-img">🐱</div>
+            <h3>Fofura Pura</h3>
+            <p class="preco">R$ 2,00</p>
+            <button class="btn-comprar" onclick="abrirPixModal('Sticker Fofura Pura', 2.00)">Comprar 🛒</button>
+        </div>
+
+        <!-- Sticker 5 -->
+        <div class="sticker-card">
+            <span class="heart-icon">❤️</span>
+            <div class="sticker-img">👽</div>
+            <h3>Stitch Fofo</h3>
+            <p class="preco">R$ 2,00</p>
+            <button class="btn-comprar" onclick="abrirPixModal('Sticker Stitch Fofo', 2.00)">Comprar 🛒</button>
+        </div>
+
+        <!-- Sticker 6 -->
+        <div class="sticker-card">
+            <span class="heart-icon">❤️</span>
+            <div class="sticker-img">🧸</div>
+            <h3>Amor de Urso</h3>
+            <p class="preco">R$ 2,00</p>
+            <button class="btn-comprar" onclick="abrirPixModal('Sticker Amor de Urso', 2.00)">Comprar 🛒</button>
+        </div>
+    </main>
+
+    <!-- Janela Modal do PIX (Carrinho / Finalizar Pagamento) -->
+    <div id="pixModal" class="modal-pix">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharPixModal()">&times;</span>
+            <div class="modal-header">
+                <span style="font-size: 2.5rem;">🛍️</span>
+                <h3>Finalizar com PIX</h3>
+                <p>Você está adquirindo: <strong id="nome-item-pix">Sticker</strong></p>
+            </div>
+            
+            <div class="pix-box">
+                <p class="total-text">Valor a pagar: <span id="valor-pix">R$ 2,00</span></p>
+                
+                <!-- QR Code Simulado Lindo -->
+                <div class="qrcode-placeholder">
+                    <div class="qr-code-lines"></div>
+                    <span class="qr-logo">PIX</span>
+                </div>
+                
+                <p class="pix-instruction">Copie a chave aleatória abaixo para pagar no app do seu banco:</p>
+                <div class="copia-cola-container">
+                    <input type="text" id="pixChave" value="00020101021126580014br.gov.bcb.pix0136amonelustickers-pix-chave-aleatoria2026" readonly>
+                    <button onclick="copiarChavePix()">Copiar 📋</button>
+                </div>
+                <p id="feedback-copiado" class="feedback-text">Chave copiada com sucesso! 💕</p>
+            </div>
+            <p class="aviso-entrega">Após realizar o pagamento, envie o comprovante pelo WhatsApp para receber seus stickers! 🚀</p>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>💖 Obrigada por visitar a Amonelu Stickers 💖</p>
+        <p class="sub-footer">Atendimento com carinho | 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
