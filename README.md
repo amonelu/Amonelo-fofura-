@@ -1,4 +1,4 @@
-# Amonelo-fofura-# 🌸 Amonelu Stickers Store ✨
+# 🌸loja Amonelu Stickers fofis ✨
 
 > Uma linda lojinha virtual de stickers com design clean, papel de parede estampado e checkout PIX integrado.
 
